@@ -20,27 +20,27 @@ english_numbers = {
 }
 
 
-def getCalibration(s: str, possibleLength: tuple[int]) -> int:
+def get_calibration(s: str, possible_length: tuple[int]) -> int:
     first, last = -1, -1
     longueur = len(s)
     for i in range(longueur):
-        possibleDigits = [s[i : min(i + l, longueur)] for l in possibleLength]
-        for possibleDigit in possibleDigits:
-            if possibleDigit in english_numbers:
+        possible_digits = [s[i : min(i + l, longueur)] for l in possible_length]
+        for possible_digit in possible_digits:
+            if possible_digit in english_numbers:
                 if first == -1:
-                    first = english_numbers[possibleDigit]
-                last = english_numbers[possibleDigit]
+                    first = english_numbers[possible_digit]
+                last = english_numbers[possible_digit]
     return 10 * first + last
 
 
-def main() -> [int, int]:
+def main():
     with open("1/input.txt", "r") as f:
         lines = f.readlines()
-        totalV1, totalV2 = 0, 0
+        total_v1, total_v2 = 0, 0
         for line in lines:
-            totalV1 += getCalibration(line, (1,))
-            totalV2 += getCalibration(line, (1, 3, 4, 5))
-    print(totalV1, totalV2)
+            total_v1 += get_calibration(line, (1,))
+            total_v2 += get_calibration(line, (1, 3, 4, 5))
+    print(total_v1, total_v2)
 
 
 if __name__ == "__main__":
