@@ -1,8 +1,8 @@
 COLORS = {"red":12,"green":13,"blue":14}
 
 def is_subset_possible(subset:str) -> bool:
-    for a in subset.split(', '):
-        number, color = a.split()
+    for number_color in subset.split(', '):
+        number, color = number_color.split()
         if COLORS[color] < int(number):
             return False
     return True

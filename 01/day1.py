@@ -22,9 +22,9 @@ english_numbers = {
 
 def get_calibration(s: str, possible_length: tuple[int]) -> int:
     first, last = -1, -1
-    longueur = len(s)
-    for i in range(longueur):
-        possible_digits = [s[i : min(i + l, longueur)] for l in possible_length]
+    length = len(s)
+    for i in range(length):
+        possible_digits = [s[i : min(i + l, length)] for l in possible_length]
         for possible_digit in possible_digits:
             if possible_digit in english_numbers:
                 if first == -1:
