@@ -34,7 +34,7 @@ def get_calibration(s: str, possible_length: tuple[int]) -> int:
 
 
 def main():
-    with open("1/input.txt", "r") as f:
+    with open("01/input.txt", "r") as f:
         lines = f.readlines()
         total_v1, total_v2 = 0, 0
         for line in lines:
